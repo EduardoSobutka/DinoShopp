@@ -1,0 +1,225 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-areas: "header header header header" "menu menu menu menu" "nav main main main" "footer footer footer footer";
+}
+
+.header,
+.menu,
+.nav,
+.main,
+.footer {
+  position: relative;
+  height: auto;
+}
+.header {
+  grid-area: header;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.header a {
+  text-decoration: none;
+  color: black;
+}
+.header ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  list-style: none;
+}
+.barrinhas {
+  display: none;
+}
+.menu {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(225, 225, 225, 0.549);
+}
+.menu img {
+  width: 100px;
+  height: 100px;
+}
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  list-style: none;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: black;
+}
+.menu ul li a:hover {
+  border-bottom: 3px solid black;
+}
+.menu input {
+  border-radius: 15px;
+  border: none;
+  background-color: rgba(225, 225, 225, 0.549);
+  height: 6vh;
+}
+
+.nav {
+  grid-area: nav;
+  padding: 15px;
+  background-color: white;
+}
+.nav h1 {
+  width: 40%;
+}
+.nav .opcoesCores {
+  width: 75%;
+  height: auto;
+}
+.nav .opcoesTamanhos table {
+  width: 50%;
+}
+.nav .opcoesTamanhos table td {
+  border: 1px solid gray;
+  text-align: center;
+  border-radius: 5px;
+}
+.nav .opcoesPrecos {
+  width: 30%;
+  display: block;
+}
+.nav .opcoesCategorias {
+  width: 28%;
+  display: block;
+}
+.nav .catPrecos {
+  display: block;
+  width: 70%;
+}
+
+.main {
+  grid-area: main;
+  overflow-y: scroll;
+  height: 110vh;
+  padding: 50px;
+  background-color: white;
+}
+.main img {
+  background-color: rgba(225, 225, 225, 0.34);
+  width: 80%;
+}
+.main table {
+  width: 100%;
+  display: flex;
+}
+.main table td {
+  text-align: center;
+}
+.main p {
+  width: 100%;
+}
+.footer {
+  grid-area: footer;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(225, 225, 225, 0.549);
+}
+
+@media only screen and (max-width: 995px) {
+  .container {
+    grid-template-areas: "header header header header" "menu menu menu menu" "nav nav nav nav" "main main main main" "footer footer footer footer";
+  }
+  .nav .opcoesCores {
+    width: 100%;
+    height: auto;
+  }
+  .nav .catPrecos {
+    display: flex;
+    width: 100%;
+  }
+  .nav .opcoesPrecos {
+    width: auto;
+    display: flex;
+  }
+  .nav .opcoesCategorias {
+    width: auto;
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    justify-content: space-between;
+  }
+  .menu img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .menu input {
+    display: none;
+  }
+  .menu ul {
+    width: 100%;
+  }
+  .header ul {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header ul {
+    display: none;
+  }
+  .header #iconeBarrinhas {
+    display: flex;
+  }
+  .container {
+    grid-template-areas: "header header header header" "barrinhas barrinhas barrinhas barrinhas" "nav nav nav nav" "main main main main" "footer footer footer footer";
+  }
+  .menu {
+    display: none;
+  }
+  .barrinhas {
+    grid-area: barrinhas;
+    display: none;
+    background-color: rgba(225, 225, 225, 0.549);
+  }
+  .barrinhas ul {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+  .barrinhas ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .barrinhas ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  .barrinhas ul li a:hover {
+    border-bottom: 2px solid black;
+  }
+}
+@media only screen and (max-width: 415px) {
+  .nav .opcoesPrecos {
+    width: auto;
+    display: block;
+  }
+  .nav .opcoesCategorias {
+    width: auto;
+    display: block;
+  }
+}
